@@ -17,42 +17,71 @@
     a:hover{text-decoration:underline}
     .wrap{max-width:980px;margin:42px auto;padding:0 20px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
-    .header{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center}
-    .avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.3)}
-    .seal{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.25)}
-    h1{font-size:clamp(22px,4vw,32px);margin:0 0 4px 0;line-height:1.15}
+
+    /* ===== Header (desktop) ===== */
+    .header{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      grid-template-areas:"avatar info seal";
+      gap:18px;align-items:center
+    }
+    .avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.3);grid-area:avatar}
+    .seal{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.25);grid-area:seal}
+    .info{grid-area:info}
+    h1{font-size:clamp(22px,4vw,32px);margin:0 0 6px 0;line-height:1.15}
     .subtitle{color:var(--muted);font-weight:600}
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
     .chip{font-size:12.5px;color:#cfe7ff;background:#0e2130;border:1px solid #163349;padding:6px 10px;border-radius:999px}
+
+    .kpis{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
+    .kpi{background:#0e1217;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+    .kpi b{display:block;font-size:18px}
+
+    .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px}
+    .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
     .section{background:#0f1318;border:1px solid var(--line);border-radius:16px;padding:18px}
     .section h2{font-size:16px;margin:0 0 10px 0}
     .list{margin:0;padding-left:18px;color:var(--muted)}
-    .kpis{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap}
-    .kpi{background:#0e1217;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
-    .kpi b{display:block;font-size:18px}
-    .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-block;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px}
-    .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+
     footer{color:var(--muted);font-size:12px;margin-top:22px;text-align:center}
 
-    /* Responsivo: manter a logo visível no celular (apenas reduzir o tamanho) */
-    @media (max-width:780px){
+    /* ===== Mobile refinado ===== */
+    @media (max-width:520px){
+      .wrap{margin:22px auto}
+      .card{padding:18px;border-radius:16px}
+      h1{font-size:24px;line-height:1.15;margin-bottom:4px}
+      .subtitle{font-size:14px}
+      .header{
+        /* 3 linhas: topo com nome e selo, depois avatar+chips, depois botões */
+        grid-template-columns:1fr auto;
+        grid-template-areas:
+          "info seal"
+          "avatar chips"
+          "cta   cta";
+        row-gap:12px;column-gap:12px
+      }
+      .info{grid-area:info}
+      .seal{grid-area:seal;width:56px;height:56px;justify-self:end}      /* logo SEM sumir */
+      .avatar{grid-area:avatar;width:88px;height:88px}
+      .chips{grid-area:chips;display:grid;grid-template-columns:1fr;gap:8px;margin-top:0}
+      .chips .chip{font-size:12px;padding:6px 10px}
+      .cta{grid-area:cta;gap:8px}
+      .btn,.btn.ghost{width:100%;text-align:center;padding:12px 14px}    /* fácil de tocar */
+      .kpis{gap:10px}
+      .kpi{flex:1 1 150px}
       .grid{grid-template-columns:1fr}
-      .header{grid-template-columns:auto 1fr auto}
-      .avatar{width:90px;height:90px}
-      .seal{width:56px;height:56px} /* não oculta mais a logo */
     }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
-      <!-- Cabeçalho tipo “perfil de cientista” -->
       <div class="header">
-        <!-- TROQUE src pelos seus arquivos -->
         <img class="avatar" src="sua_foto.jpg" alt="Foto de perfil — Emerson R. K. Gonçalves">
-        <div>
+        <div class="info">
           <h1>Emerson Roberto Kruger Gonçalves</h1>
           <div class="subtitle">Bacharelando em Física · Universidade Federal Fluminense (UFF)</div>
           <div class="chips">
@@ -61,22 +90,18 @@
             <span class="chip">Métodos Matemáticos</span>
           </div>
           <div class="cta">
-            <!-- Aponte para seus PDFs no repositório -->
             <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">Artigo: Gravitação</a>
             <a class="btn ghost" href="certificado_pibid.pdf">PIBID (368h)</a>
           </div>
         </div>
-        <!-- Selo circular (logo UFF) -->
-        <img class="seal" src="logouff_vertical_fundo_azul-1.png" alt="Selo — UFF">
+        <img class="seal" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
       </div>
 
-      <!-- Indicadores rápidos -->
       <div class="kpis">
         <div class="kpi"><b>2025</b><small>Ingresso UFF (currículo bacharel)</small></div>
         <div class="kpi"><b>368h</b><small>PIBID/CAPES — Física (2023–2024)</small></div>
       </div>
 
-      <!-- Blocos laterais -->
       <div class="grid">
         <div class="section">
           <h2>Sobre</h2>
