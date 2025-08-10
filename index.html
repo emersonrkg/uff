@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Emerson R. K. Gonçalves — Perfil</title>
-  <meta name="description" content="Perfil acadêmico de Emerson Roberto Kruger Gonçalves — Bacharelando em Física (UFF).">
+  <title>Emerson Roberto Kruger Gonçalves — Perfil</title>
+  <meta name="description" content="Perfil acadêmico de Emerson R. K. Gonçalves — Bacharelando em Física (UFF).">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
@@ -13,80 +13,55 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:980px;margin:42px auto;padding:0 20px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+    .wrap{max-width:980px;margin:36px auto;padding:0 20px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
 
-    /* ===== HEADER (DESKTOP) ===== */
-    .header-desktop{
-      display:grid;
-      grid-template-columns: 1fr auto;
-      gap:22px; align-items:start;
-    }
-    .media{display:flex;align-items:center;gap:16px}
-    .avatar{
-      width:116px;height:116px;border-radius:50%;
-      object-fit:cover;border:3px solid var(--line);
-      box-shadow:0 6px 24px rgba(0,0,0,.3)
-    }
-    .seal{
-      width:86px;height:86px;border-radius:50%;
-      object-fit:cover;border:2px solid var(--line);
-      box-shadow:0 6px 24px rgba(0,0,0,.25)
-    }
-    h1{font-size:clamp(24px,4vw,36px);margin:0 0 6px 0;line-height:1.15}
-    .subtitle{color:var(--muted);font-weight:600;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-    .seal-inline{width:20px;height:20px;border-radius:50%;object-fit:cover;vertical-align:baseline}
-    .uni-wrap{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap}
-
+    /* bloco topo (desktop) */
+    .header{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
+    h1{margin:0 0 6px 0;font-size:clamp(22px,4vw,34px);line-height:1.15}
+    .subtitle{color:var(--muted)}
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
     .chip{font-size:12.5px;color:#cfe7ff;background:#0e2130;border:1px solid #163349;padding:6px 10px;border-radius:999px}
-    .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+    .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
     .btn{display:inline-block;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px}
     .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
-
-    .kpis{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
+    .media{display:flex;align-items:center;gap:14px}
+    .avatar{width:116px;height:116px;border-radius:50%;object-fit:cover;border:3px solid var(--line)}
+    .seal{width:86px;height:86px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
+    .kpis{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
     .kpi{background:#0e1217;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
     .kpi b{display:block;font-size:18px}
 
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
-    .section{background:#0f1318;border:1px solid var(--line);border-radius:16px;padding:18px}
-    .section h2{font-size:16px;margin:0 0 10px 0}
+    /* blocos */
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+    .section{background:#0f1318;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .section h2{margin:0 0 10px 0;font-size:16px}
     .list{margin:0;padding-left:18px;color:var(--muted)}
 
-    footer{color:var(--muted);font-size:12px;margin-top:22px;text-align:center}
+    /* rodapé */
+    footer{color:#aab3bf;font-size:12px;margin:22px 0;text-align:center}
     .footline{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
-    .seal-foot{width:18px;height:18px;border-radius:50%;object-fit:cover;vertical-align:middle}
+    .email-wrap{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap}
+    .seal-foot{width:18px;height:18px;border-radius:50%;object-fit:cover;vertical-align:baseline}
 
-    /* ===== HEADER (MOBILE — estilo KITA) ===== */
+    /* MOBILE: cartão com foto à esquerda e textos à direita */
     .header-mobile{display:none}
-
     @media (max-width:520px){
-      .wrap{margin:22px auto}
       .card{padding:18px;border-radius:16px}
-
-      .header-desktop{display:none}
+      .header{display:none}
       .header-mobile{display:block}
-
       .bio-card{
         display:flex;align-items:center;gap:12px;
-        padding:12px;margin-bottom:14px;
-        background:#0f1318;border:1px solid var(--line);border-radius:12px;
+        padding:12px;margin-bottom:14px;background:#0f1318;border:1px solid var(--line);border-radius:12px;
       }
-      .avatar-sm{
-        width:104px;height:104px;border-radius:50%;
-        object-fit:cover;border:2px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.25)
-      }
+      .avatar-sm{width:104px;height:104px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
       .bio-txt{display:flex;flex-direction:column;gap:4px}
       .name-sm{font-weight:800;font-size:20px;line-height:1.1}
-
-      /* duas linhas: 1) bacharelando  2) universidade (em 1 linha) */
       .line-sm{color:var(--muted);font-size:14px;display:flex;flex-direction:column;gap:4px}
-      .uni-one{font-size:13px; white-space:nowrap;} /* força caber em uma linha */
-
+      .uni-one{font-size:13px;white-space:nowrap}
       .chips{justify-content:center}
       .cta{justify-content:center}
       .btn,.btn.ghost{width:100%;text-align:center;padding:12px 14px}
-
       .kpis{gap:10px}
       .kpi{flex:1 1 150px}
       .grid{grid-template-columns:1fr}
@@ -97,10 +72,10 @@
   <main class="wrap">
     <section class="card">
 
-      <!-- ===== HEADER MOBILE ===== -->
+      <!-- MOBILE (estilo cartão) -->
       <div class="header-mobile">
         <div class="bio-card">
-          <img class="avatar-sm" src="sua_foto.jpg" alt="Foto de perfil — Emerson R. K. Gonçalves">
+          <img class="avatar-sm" src="sua_foto.jpg" alt="Emerson R. K. Gonçalves">
           <div class="bio-txt">
             <div class="name-sm">Emerson Roberto Kruger Gonçalves</div>
             <div class="line-sm">
@@ -122,17 +97,11 @@
         </div>
       </div>
 
-      <!-- ===== HEADER DESKTOP ===== -->
-      <div class="header-desktop">
-        <div class="info">
+      <!-- DESKTOP -->
+      <div class="header">
+        <div>
           <h1>Emerson Roberto Kruger Gonçalves</h1>
-          <div class="subtitle">
-            Bacharelando em Física ·
-            <span class="uni-wrap">
-              Universidade Federal Fluminense (UFF)
-              <img class="seal-inline" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
-            </span>
-          </div>
+          <div class="subtitle">Bacharelando em Física · Universidade Federal Fluminense (UFF)</div>
 
           <div class="chips">
             <span class="chip">Interesse: Gravitação & Relatividade</span>
@@ -147,18 +116,16 @@
         </div>
 
         <div class="media">
-          <img class="avatar" src="sua_foto.jpg" alt="Foto de perfil — Emerson R. K. Gonçalves">
+          <img class="avatar" src="sua_foto.jpg" alt="Emerson R. K. Gonçalves">
           <img class="seal" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
         </div>
       </div>
 
-      <!-- KPIs -->
       <div class="kpis">
         <div class="kpi"><b>2025</b><small>Ingresso UFF (currículo bacharel)</small></div>
         <div class="kpi"><b>368h</b><small>PIBID/CAPES — Física (2023–2024)</small></div>
       </div>
 
-      <!-- SEÇÕES -->
       <div class="grid">
         <div class="section">
           <h2>Sobre</h2>
@@ -187,17 +154,18 @@
           </ul>
         </div>
       </div>
-
-      <!-- RODAPÉ -->
-      <footer>
-        <span class="footline">
-          <img class="seal-foot" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
-          © <span id="y"></span> Emerson R. K. Gonçalves — Contato:
-          <a href="mailto:emersonrkg@id.uff.br">emersonrkg@id.uff.br</a> ·
-          <a href="https://github.com/emersonkg">GitHub</a>
-        </span>
-      </footer>
     </section>
+
+    <footer>
+      <span class="footline">
+        © <span id="y"></span> Emerson R. K. Gonçalves — Contato:
+        <span class="email-wrap">
+          <a href="mailto:emersonrkg@id.uff.br">emersonrkg@id.uff.br</a>
+          <img class="seal-foot" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
+        </span>
+        · <a href="https://github.com/emersonkg">GitHub</a>
+      </span>
+    </footer>
   </main>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
