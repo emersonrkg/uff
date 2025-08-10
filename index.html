@@ -3,120 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lei da Gravitação Universal de Newton — Emerson R. K. Gonçalves</title>
-  <meta name="description" content="Artigo de divulgação acadêmica com fórmulas renderizadas por MathJax.">
+  <title>Lei da Gravitação Universal de Newton — PDF oficial</title>
+  <meta name="description" content="Artigo em PDF, versão oficial, renderizado de forma idêntica ao original.">
   <style>
     :root{--fg:#111;--muted:#555;--link:#0a58ca}
-    body{margin:0;color:var(--fg);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial}
-    .wrap{max-width:880px;margin:auto;padding:32px 18px}
-    header{border-bottom:1px solid #eee;margin-bottom:24px;padding-bottom:8px}
+    html,body{height:100%}
+    body{margin:0;color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;background:#fff}
+    header,footer{max-width:1100px;margin:auto;padding:16px}
+    header{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:space-between;border-bottom:1px solid #eee}
     nav a{margin-right:14px;color:var(--link);text-decoration:none}
-    h1,h2,h3{line-height:1.25}
-    h1{font-size:clamp(28px,4vw,36px)}
-    h2{margin-top:1.8rem}
-    figure{margin:1rem 0;text-align:center}
-    .meta{color:var(--muted)}
-    footer{border-top:1px solid #eee;margin-top:32px;padding-top:12px;color:var(--muted);font-size:0.95rem}
-    .refs a{color:var(--link)}
+    .wrap{max-width:1100px;margin:auto}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;color:var(--muted)}
+    .viewer{height:calc(100vh - 160px)} /* ocupa a tela quase toda */
+    .btn{display:inline-block;padding:8px 12px;border:1px solid #ddd;border-radius:8px;text-decoration:none;color:var(--fg)}
+    .btn:hover{background:#f7f7f7}
   </style>
-
-  <!-- MathJax v3 (aceita $...$ e $$...$$) -->
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$','$$'], ['\\[','\\]']]
-      },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-  <header class="wrap">
-    <h1>Lei da Gravitação Universal de Newton</h1>
-    <p class="meta"><strong>Autor:</strong> Emerson Roberto Kruger Gonçalves — Bacharelando em Física (UFF) • Agosto 2025</p>
+  <header>
+    <div>
+      <strong>Lei da Gravitação Universal de Newton</strong><br>
+      <small>Autor: Emerson Roberto Kruger Gonçalves — Bacharelando em Física (UFF)</small>
+    </div>
     <nav>
-      <a href="./index.html">Artigo</a>
+      <a href="./index.html">Artigo (PDF)</a>
       <a href="./sobre.html">Sobre mim</a>
     </nav>
   </header>
 
-  <main class="wrap" id="conteudo">
-    <h2>1. Introdução</h2>
-    <p>
-      A gravitação é uma das forças fundamentais da natureza e foi sistematizada de forma notável por Isaac Newton no século XVII.
-      A partir da análise das leis de movimento de Johannes Kepler, Newton formulou um princípio simples e universal capaz de explicar
-      desde a queda de corpos na superfície terrestre até o movimento de planetas em torno do Sol. Sua Lei da Gravitação Universal
-      conecta o comportamento de objetos celestes e terrestres sob um mesmo conjunto de regras, revolucionando a física e abrindo
-      caminho para áreas como a astronomia e a engenharia espacial. Neste artigo, exploramos a formulação matemática dessa lei,
-      seus conceitos fundamentais e aplicações, além de suas limitações na fronteira relativística.
-    </p>
+  <div class="wrap">
+    <div class="bar">
+      <div>Versão oficial em PDF (exibição idêntica ao original).</div>
+      <div>
+        <a class="btn" href="./lei-da-gravitacao-universal.pdf" download>Baixar PDF</a>
+        <a class="btn" href="./lei-da-gravitacao-universal.pdf" target="_blank" rel="noopener">Abrir em nova aba</a>
+      </div>
+    </div>
 
-    <h2>2. Lei da Gravitação Universal</h2>
-    <p>Qualquer par de corpos exerce uma força de atração proporcional às massas e inversamente proporcional ao quadrado da distância:</p>
-    <p>$$F = G \frac{m_1 m_2}{r^2}$$</p>
-    <p>
-      Aqui, $F$ é o módulo da força (N), $m_1$ e $m_2$ são as massas (kg), $r$ é a distância entre os centros de massa (m) e
-      $G$ é a constante gravitacional universal (CODATA 2022):
-    </p>
-    <p>$$G = 6{,}67430(15)\times 10^{-11}\ \mathrm{m}^3\,\mathrm{kg}^{-1}\,\mathrm{s}^{-2}$$</p>
+    <!-- Visualizador incorporado: usa o PDF exatamente como está -->
+    <object class="viewer" data="./lei-da-gravitacao-universal.pdf" type="application/pdf" width="100%">
+      <!-- Fallback para navegadores que não embutem PDF -->
+      <iframe class="viewer" src="./lei-da-gravitacao-universal.pdf" width="100%"></iframe>
+    </object>
+  </div>
 
-    <h2>3. Campo Gravitacional e Potencial</h2>
-    <p>O campo gravitacional $\mathbf{g}(\mathbf{r})$ fornece a aceleração que uma massa de prova sofre:</p>
-    <p>$$\mathbf{g}(\mathbf{r}) = -\,G \sum_i m_i \,\frac{\mathbf{r}-\mathbf{r}_i}{\lVert \mathbf{r}-\mathbf{r}_i\rVert^{3}}$$</p>
-    <p>ou, para distribuição contínua $\rho(\mathbf{r'})$:</p>
-    <p>$$\mathbf{g}(\mathbf{r}) = -\,G \int \rho(\mathbf{r'})\,\frac{\mathbf{r}-\mathbf{r'}}{\lVert \mathbf{r}-\mathbf{r'}\rVert^{3}}\,d^{3}\mathbf{r'}$$</p>
-    <p>Definimos o potencial $\Phi$ por: $$\mathbf{g}(\mathbf{r}) = -\,\nabla \Phi(\mathbf{r})$$</p>
-    <p>Potencial para massas pontuais: $$\Phi(\mathbf{r}) = -\,G \sum_i \frac{m_i}{\lVert \mathbf{r}-\mathbf{r}_i\rVert}$$</p>
-    <p>Potencial para meio contínuo: $$\Phi(\mathbf{r}) = -\,G \int \frac{\rho(\mathbf{r'})}{\lVert \mathbf{r}-\mathbf{r'}\rVert}\,d^{3}\mathbf{r'}$$</p>
-    <p>Equação de Poisson: $$\nabla^{2}\Phi(\mathbf{r}) = 4\pi G\,\rho(\mathbf{r})$$</p>
-    <p>Superfícies equipotenciais têm $\Phi$ constante; $U(\mathbf{r})=m\,\Phi(\mathbf{r})$ e $W_{A\to B}=-\Delta U$.</p>
-
-    <h2>4. Órbitas Keplerianas</h2>
-    <p>Órbita circular: $$\frac{GMm}{r^{2}} = \frac{mv^{2}}{r} \;\Rightarrow\; v = \sqrt{\frac{GM}{r}}$$</p>
-    <p>Período: $$T^{2} = \frac{4\pi^{2}}{GM}\, r^{3}$$</p>
-    <p>Para elipses: $$T^{2} = \frac{4\pi^{2}}{G(M+m)}\,a^{3}$$</p>
-    <p><strong>Exemplo:</strong> $h=400\,\text{km}$ → $v\approx7{,}67$ km/s, $T\approx92{,}3$ min (≈ 15 órbitas/dia).</p>
-
-    <h2>5. Limitações da Lei de Newton</h2>
-    <ul>
-      <li>Periélio de Mercúrio: $\sim 43''$/século (explicado pela Relatividade Geral).</li>
-      <li>Desvio da luz (lente gravitacional) requer curvatura do espaço-tempo.</li>
-      <li>Campos intensos e velocidades relativísticas: é necessária Relatividade Geral.</li>
-      <li>Ondas gravitacionais: não previstas por Newton; detectadas em 2015.</li>
-    </ul>
-
-    <h2>6. Aplicações Práticas</h2>
-    <ul>
-      <li>Satélites (LEO/MEO/GEO), transferências de Hohmann, assistências gravitacionais.</li>
-      <li>Medição de $G$ (Cavendish a técnicas modernas).</li>
-      <li>Geofísica: mapeamento de variações do campo.</li>
-      <li>Ensino: base conceitual da física clássica.</li>
-    </ul>
-
-    <h2>7. Conclusão</h2>
-    <p>
-      A Lei da Gravitação Universal de Newton unifica a física terrestre e a celeste sob um princípio matemático simples e poderoso.
-      Apesar de limitações em regimes relativísticos, continua sendo ferramenta principal em problemas cotidianos e de engenharia
-      espacial, além de base para Relatividade e astrofísica.
-    </p>
-
-    <h2>Referências (acesso livre)</h2>
-    <ul class="refs">
-      <li>NIST — CODATA 2022: <a href="https://physics.nist.gov/cuu/Constants/">physics.nist.gov/cuu/Constants</a></li>
-      <li>Britannica — <a href="https://www.britannica.com">britannica.com</a></li>
-      <li>MIT OpenCourseWare — <a href="https://ocw.mit.edu">ocw.mit.edu</a></li>
-      <li>Carroll, S. — <a href="https://arxiv.org/abs/gr-qc/9712019">arXiv: gr-qc/9712019</a></li>
-      <li>LIGO — <a href="https://www.ligo.org">ligo.org</a></li>
-      <li>NASA Space Place — <a href="https://spaceplace.nasa.gov">spaceplace.nasa.gov</a></li>
-      <li>Observatório Nacional — <a href="https://www.on.br/">on.br</a></li>
-    </ul>
-  </main>
-
-  <footer class="wrap">
-    <p>Publicado com <a href="https://pages.github.com/">GitHub Pages</a>. Equações por <a href="https://www.mathjax.org/">MathJax</a>.</p>
+  <footer>
+    <small>Publicado com GitHub Pages. A exibição acima é o PDF genuíno — 1:1 com o original.</small>
   </footer>
 </body>
 </html>
