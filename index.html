@@ -1,4 +1,4 @@
-onrkg@id.uff.br<!doctype html>
+<!doctype html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
@@ -28,14 +28,21 @@ onrkg@id.uff.br<!doctype html>
     .section{background:#0f1318;border:1px solid var(--line);border-radius:16px;padding:18px}
     .section h2{font-size:16px;margin:0 0 10px 0}
     .list{margin:0;padding-left:18px;color:var(--muted)}
-    .kpis{display:flex;gap:16px;margin-top:10px}
+    .kpis{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap}
     .kpi{background:#0e1217;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
     .kpi b{display:block;font-size:18px}
     .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
     .btn{display:inline-block;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px}
     .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
     footer{color:var(--muted);font-size:12px;margin-top:22px;text-align:center}
-    @media (max-width:780px){ .grid{grid-template-columns:1fr} .header{grid-template-columns:auto 1fr} .seal{display:none} }
+
+    /* Responsivo: manter a logo visível no celular (apenas reduzir o tamanho) */
+    @media (max-width:780px){
+      .grid{grid-template-columns:1fr}
+      .header{grid-template-columns:auto 1fr auto}
+      .avatar{width:90px;height:90px}
+      .seal{width:56px;height:56px} /* não oculta mais a logo */
+    }
   </style>
 </head>
 <body>
@@ -63,7 +70,7 @@ onrkg@id.uff.br<!doctype html>
         <img class="seal" src="logouff_vertical_fundo_azul-1.png" alt="Selo — UFF">
       </div>
 
-      <!-- Indicadores rápidos (opcional) -->
+      <!-- Indicadores rápidos -->
       <div class="kpis">
         <div class="kpi"><b>2025</b><small>Ingresso UFF (currículo bacharel)</small></div>
         <div class="kpi"><b>368h</b><small>PIBID/CAPES — Física (2023–2024)</small></div>
@@ -80,7 +87,7 @@ onrkg@id.uff.br<!doctype html>
           <h2>Formação resumida</h2>
           <ul class="list">
             <li><b>UFF · Bacharelado em Física</b> — matriz com titulação “BACHAREL” (currículo 25.01.006). <a href="MatrizCurricular2025_1752617039194.pdf">ver matriz</a></li>
-            <li><b>UFLA · Licenciatura em Física</b> — disciplinas cursadas (2022–2025).
+            <li><b>UFLA · Licenciatura em Física</b> — disciplinas cursadas (2022–2025).</li>
           </ul>
         </div>
 
@@ -100,7 +107,9 @@ onrkg@id.uff.br<!doctype html>
       </div>
 
       <footer>
-        © <span id="y"></span> Emerson R. K. Gonçalves — Contato: <a href="emersonrkg@id.uff.br">emerson@example.com</a> · <a href="https://github.com/emersonkg">GitHub</a>
+        © <span id="y"></span> Emerson R. K. Gonçalves — Contato:
+        <a href="mailto:emersonrkg@id.uff.br">emersonrkg@id.uff.br</a> ·
+        <a href="https://github.com/emersonkg">GitHub</a>
       </footer>
     </section>
   </main>
