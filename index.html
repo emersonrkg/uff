@@ -1,10 +1,3 @@
-Beleza, Emerson.
-Já incluí o **link para o seu Currículo Lattes** de forma visível e com o mesmo padrão visual do site.
-Coloquei ele no rodapé junto ao GitHub, para ficar acessível em todas as páginas.
-
-Segue o **código atualizado**:
-
-```html
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -30,7 +23,8 @@ Segue o **código atualizado**:
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
     .chip{font-size:12.5px;color:#cfe7ff;background:#0e2130;border:1px solid #163349;padding:6px 10px;border-radius:999px}
     .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-block;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px}
+    .btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px}
+    .btn svg{width:14px;height:14px;fill:#00131f}
     .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
     .media{display:flex;align-items:center;gap:14px}
     .avatar{width:116px;height:116px;border-radius:50%;object-fit:cover;border:3px solid var(--line)}
@@ -100,6 +94,11 @@ Segue o **código atualizado**:
 
         <div class="cta">
           <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">Artigo: Gravitação</a>
+          <a class="btn" href="http://lattes.cnpq.br/2794155346351456">
+            <!-- Ícone acadêmico -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 7.27L5.74 7 12 4.73 18.26 7 12 9.27zM5 12v7h2v-7H5zm12 0v7h2v-7h-2z"/></svg>
+            Currículo Lattes
+          </a>
           <a class="btn ghost" href="certificado_pibid.pdf">PIBID (368h)</a>
         </div>
       </div>
@@ -118,6 +117,10 @@ Segue o **código atualizado**:
 
           <div class="cta">
             <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">Artigo: Gravitação</a>
+            <a class="btn" href="http://lattes.cnpq.br/2794155346351456">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 7.27L5.74 7 12 4.73 18.26 7 12 9.27zM5 12v7h2v-7H5zm12 0v7h2v-7h-2z"/></svg>
+              Currículo Lattes
+            </a>
             <a class="btn ghost" href="certificado_pibid.pdf">PIBID (368h)</a>
           </div>
         </div>
@@ -171,7 +174,6 @@ Segue o **código atualizado**:
           <img class="seal-foot" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
         </span>
         · <a href="https://github.com/emersonkg">GitHub</a>
-        · <a href="http://lattes.cnpq.br/2794155346351456">Currículo Lattes</a>
       </span>
     </footer>
   </main>
@@ -179,13 +181,3 @@ Segue o **código atualizado**:
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
-```
-
-Agora, no rodapé vai aparecer assim:
-
-```
-© 2025 Emerson R. K. Gonçalves — Contato: [email + logo UFF] · GitHub · Currículo Lattes
-```
-
-Quer que eu também adicione o **link do Lattes** na parte de cima, junto aos botões “Artigo” e “PIBID”?
-Assim ele ficaria visível logo no início também.
