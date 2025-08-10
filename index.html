@@ -1,54 +1,60 @@
-<!doctype html>
-<html lang="pt-br">
+ <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lei da Gravitação Universal de Newton — PDF oficial</title>
-  <meta name="description" content="Artigo em PDF, versão oficial, renderizado de forma idêntica ao original.">
-  <style>
-    :root{--fg:#111;--muted:#555;--link:#0a58ca}
-    html,body{height:100%}
-    body{margin:0;color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;background:#fff}
-    header,footer{max-width:1100px;margin:auto;padding:16px}
-    header{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:space-between;border-bottom:1px solid #eee}
-    nav a{margin-right:14px;color:var(--link);text-decoration:none}
-    .wrap{max-width:1100px;margin:auto}
-    .bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;color:var(--muted)}
-    .viewer{height:calc(100vh - 160px)} /* ocupa a tela quase toda */
-    .btn{display:inline-block;padding:8px 12px;border:1px solid #ddd;border-radius:8px;text-decoration:none;color:var(--fg)}
-    .btn:hover{background:#f7f7f7}
-  </style>
+<meta charset="UTF-8">
+<title>Perfil Emerson</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+    }
+    .perfil {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .perfil img.foto {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .perfil-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .perfil-info h2 {
+        margin: 0;
+        font-size: 20px;
+    }
+    .perfil-info p {
+        margin: 0;
+        color: #555;
+    }
+    .uff-logo {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: auto;
+    }
+</style>
 </head>
 <body>
-  <header>
-    <div>
-      <strong>Lei da Gravitação Universal de Newton</strong><br>
-      <small>Autor: Emerson Roberto Kruger Gonçalves — Bacharelando em Física (UFF)</small>
-    </div>
-    <nav>
-      <a href="./index.html">Artigo (PDF)</a>
-      <a href="./sobre.html">Sobre mim</a>
-    </nav>
-  </header>
 
-  <div class="wrap">
-    <div class="bar">
-      <div>Versão oficial em PDF (exibição idêntica ao original).</div>
-      <div>
-        <a class="btn" href="./lei-da-gravitacao-universal.pdf" download>Baixar PDF</a>
-        <a class="btn" href="./lei-da-gravitacao-universal.pdf" target="_blank" rel="noopener">Abrir em nova aba</a>
-      </div>
+<div class="perfil">
+    <!-- Sua foto -->
+    <img src="sua_foto.jpg" alt="Foto de Emerson" class="foto">
+
+    <!-- Nome e título -->
+    <div class="perfil-info">
+        <h2>Emerson Roberto Kruger Gonçalves</h2>
+        <p>Bacharelado em Física · Universidade Federal Fluminense</p>
     </div>
 
-    <!-- Visualizador incorporado: usa o PDF exatamente como está -->
-    <object class="viewer" data="./lei-da-gravitacao-universal.pdf" type="application/pdf" width="100%">
-      <!-- Fallback para navegadores que não embutem PDF -->
-      <iframe class="viewer" src="./lei-da-gravitacao-universal.pdf" width="100%"></iframe>
-    </object>
-  </div>
+    <!-- Logo UFF -->
+    <img src="logo_uff.jpg" alt="UFF" class="uff-logo">
+</div>
 
-  <footer>
-    <small>Publicado com GitHub Pages. A exibição acima é o PDF genuíno — 1:1 com o original.</small>
-  </footer>
 </body>
 </html>
