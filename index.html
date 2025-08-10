@@ -16,14 +16,27 @@
     .wrap{max-width:980px;margin:42px auto;padding:0 20px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
 
-    /* ===== HEADER (desktop) ===== */
-    .header{display:grid;grid-template-columns: 1fr auto;gap:22px;align-items:start}
+    /* ===== HEADER (DESKTOP) ===== */
+    .header-desktop{
+      display:grid;
+      grid-template-columns: 1fr auto;   /* info | media (avatar+logo) */
+      gap:22px; align-items:start;
+    }
     .media{display:flex;align-items:center;gap:16px}
-    .avatar{width:116px;height:116px;border-radius:50%;object-fit:cover;border:3px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.3)}
-    .seal{width:86px;height:86px;border-radius:50%;object-fit:cover;border:2px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+    .avatar{
+      width:116px;height:116px;border-radius:50%;
+      object-fit:cover;border:3px solid var(--line);
+      box-shadow:0 6px 24px rgba(0,0,0,.3)
+    }
+    .seal{
+      width:86px;height:86px;border-radius:50%;
+      object-fit:cover;border:2px solid var(--line);
+      box-shadow:0 6px 24px rgba(0,0,0,.25)
+    }
     h1{font-size:clamp(24px,4vw,36px);margin:0 0 6px 0;line-height:1.15}
     .subtitle{color:var(--muted);font-weight:600;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
     .seal-inline{width:22px;height:22px;border-radius:50%;object-fit:cover;vertical-align:middle}
+
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
     .chip{font-size:12.5px;color:#cfe7ff;background:#0e2130;border:1px solid #163349;padding:6px 10px;border-radius:999px}
     .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
@@ -41,52 +54,77 @@
 
     footer{color:var(--muted);font-size:12px;margin-top:22px;text-align:center}
 
-    /* ===== MOBILE ===== */
-    /* Novo bloco "mobile-bio" no estilo Kita: foto à esquerda, texto à direita */
-    .mobile-bio{display:none}
+    /* ===== HEADER (MOBILE — estilo KITA) ===== */
+    .header-mobile{display:none}  /* só mostra no mobile */
 
     @media (max-width:520px){
       .wrap{margin:22px auto}
       .card{padding:18px;border-radius:16px}
 
-      /* esconde o avatar grande e a logo grande do header */
-      .media{display:none}
-      .avatar{display:none}
-      .seal{display:none}
+      /* esconde o header desktop e mostra o mobile */
+      .header-desktop{display:none}
+      .header-mobile{
+        display:block;
+      }
 
-      /* centraliza título, chips e botões (como você gostou) */
-      .header{grid-template-columns:1fr;justify-items:center;text-align:center}
-      .subtitle{justify-content:center}
+      /* cartão da foto + textos lado a lado */
+      .bio-card{
+        display:flex;align-items:center;gap:12px;
+        padding:12px;margin-bottom:14px;
+        background:#0f1318;border:1px solid var(--line);border-radius:12px;
+      }
+      .avatar-sm{
+        width:78px;height:78px;border-radius:50%;
+        object-fit:cover;border:2px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.25)
+      }
+      .bio-txt{display:flex;flex-direction:column;gap:4px}
+      .name-sm{font-weight:800;font-size:20px;line-height:1.1}
+      .line-sm{color:var(--muted);font-size:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+      .seal-dot{width:18px;height:18px;border-radius:50%;object-fit:cover;vertical-align:middle}
+
+      /* chips e botões centralizados após o cartão */
       .chips{justify-content:center}
       .cta{justify-content:center}
       .btn,.btn.ghost{width:100%;text-align:center;padding:12px 14px}
 
-      /* mostra a mini bio em fila (estilo Kita) logo abaixo dos botões */
-      .mobile-bio{
-        display:flex;align-items:center;gap:12px;
-        margin-top:14px; padding:12px;
-        background:#0f1318;border:1px solid var(--line);border-radius:12px;
-      }
-      .avatar-sm{
-        width:72px;height:72px;border-radius:50%;
-        object-fit:cover;border:2px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.25)
-      }
-      .bio-txt{display:flex;flex-direction:column;gap:4px;text-align:left}
-      .name-sm{font-weight:800;font-size:18px;line-height:1.1}
-      .line-sm{color:var(--muted);font-size:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-      .seal-dot{width:18px;height:18px;border-radius:50%;object-fit:cover;vertical-align:middle}
-      .grid{grid-template-columns:1fr}
       .kpis{gap:10px}
       .kpi{flex:1 1 150px}
+      .grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
-      <!-- HEADER -->
-      <div class="header">
-        <!-- INFO -->
+
+      <!-- ===== HEADER MOBILE (foto à esquerda, textos à direita) ===== -->
+      <div class="header-mobile">
+        <div class="bio-card">
+          <img class="avatar-sm" src="sua_foto.jpg" alt="Foto de perfil — Emerson R. K. Gonçalves">
+          <div class="bio-txt">
+            <div class="name-sm">Emerson Roberto Kruger Gonçalves</div>
+            <div class="line-sm">
+              Bacharelando em Física ·
+              <img class="seal-dot" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
+              Universidade Federal Fluminense (UFF)
+            </div>
+          </div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Interesse: Gravitação & Relatividade</span>
+          <span class="chip">Interesse: Ensino de Física</span>
+          <span class="chip">Métodos Matemáticos</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">Artigo: Gravitação</a>
+          <a class="btn ghost" href="certificado_pibid.pdf">PIBID (368h)</a>
+        </div>
+      </div>
+
+      <!-- ===== HEADER DESKTOP (mantido como estava) ===== -->
+      <div class="header-desktop">
         <div class="info">
           <h1>Emerson Roberto Kruger Gonçalves</h1>
           <div class="subtitle">
@@ -105,22 +143,8 @@
             <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">Artigo: Gravitação</a>
             <a class="btn ghost" href="certificado_pibid.pdf">PIBID (368h)</a>
           </div>
-
-          <!-- MINI BIO — só aparece no mobile (estilo Kita) -->
-          <div class="mobile-bio">
-            <img class="avatar-sm" src="sua_foto.jpg" alt="Foto de perfil — Emerson R. K. Gonçalves">
-            <div class="bio-txt">
-              <div class="name-sm">Emerson Roberto Kruger Gonçalves</div>
-              <div class="line-sm">
-                Bacharelando em Física ·
-                <img class="seal-dot" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
-                Universidade Federal Fluminense (UFF)
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- MEDIA (desktop): foto + logo lado a lado -->
         <div class="media">
           <img class="avatar" src="sua_foto.jpg" alt="Foto de perfil — Emerson R. K. Gonçalves">
           <img class="seal" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
