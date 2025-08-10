@@ -1,60 +1,111 @@
- <!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Perfil Emerson</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 40px;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emerson R. K. Gonçalves — Perfil</title>
+  <meta name="description" content="Perfil acadêmico de Emerson Roberto Kruger Gonçalves — Bacharelando em Física (UFF).">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#12161b; --text:#e8eef5; --muted:#a6b3c3; --accent:#4cc2ff; --line:#1e232b;
     }
-    .perfil {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    .perfil img.foto {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-    .perfil-info {
-        display: flex;
-        flex-direction: column;
-    }
-    .perfil-info h2 {
-        margin: 0;
-        font-size: 20px;
-    }
-    .perfil-info p {
-        margin: 0;
-        color: #555;
-    }
-    .uff-logo {
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-left: auto;
-    }
-</style>
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:42px auto;padding:0 20px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+    .header{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center}
+    .avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.3)}
+    .seal{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+    h1{font-size:clamp(22px,4vw,32px);margin:0 0 4px 0;line-height:1.15}
+    .subtitle{color:var(--muted);font-weight:600}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .chip{font-size:12.5px;color:#cfe7ff;background:#0e2130;border:1px solid #163349;padding:6px 10px;border-radius:999px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+    .section{background:#0f1318;border:1px solid var(--line);border-radius:16px;padding:18px}
+    .section h2{font-size:16px;margin:0 0 10px 0}
+    .list{margin:0;padding-left:18px;color:var(--muted)}
+    .kpis{display:flex;gap:16px;margin-top:10px}
+    .kpi{background:#0e1217;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+    .kpi b{display:block;font-size:18px}
+    .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px}
+    .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+    footer{color:var(--muted);font-size:12px;margin-top:22px;text-align:center}
+    @media (max-width:780px){ .grid{grid-template-columns:1fr} .header{grid-template-columns:auto 1fr} .seal{display:none} }
+  </style>
 </head>
 <body>
+  <main class="wrap">
+    <section class="card">
+      <!-- Cabeçalho tipo “perfil de cientista” -->
+      <div class="header">
+        <!-- TROQUE src pelos seus arquivos -->
+        <img class="avatar" src="sua_foto.jpg" alt="Foto de perfil — Emerson R. K. Gonçalves">
+        <div>
+          <h1>Emerson Roberto Kruger Gonçalves</h1>
+          <div class="subtitle">Bacharelando em Física · Universidade Federal Fluminense (UFF)</div>
+          <div class="chips">
+            <span class="chip">Interesse: Gravitação & Relatividade</span>
+            <span class="chip">Interesse: Ensino de Física</span>
+            <span class="chip">Métodos Matemáticos</span>
+          </div>
+          <div class="cta">
+            <!-- Aponte para seus PDFs no repositório -->
+            <a class="btn" href="Lei-da-Gravitacao-Universal.pdf">Artigo: Gravitação</a>
+            <a class="btn ghost" href="Historico_UFLA_Emerson.pdf">Histórico (UFLA)</a>
+            <a class="btn ghost" href="certificado_pibid.pdf">PIBID (368h)</a>
+          </div>
+        </div>
+        <!-- Selo circular (logo UFF) -->
+        <img class="seal" src="logo_uff.png" alt="Selo — UFF">
+      </div>
 
-<div class="perfil">
-    <!-- Sua foto -->
-    <img src="sua_foto.jpg" alt="Foto de Emerson" class="foto">
+      <!-- Indicadores rápidos (opcional) -->
+      <div class="kpis">
+        <div class="kpi"><b>2025</b><small>Ingresso UFF (currículo bacharel)</small></div>
+        <div class="kpi"><b>368h</b><small>PIBID/CAPES — Física (2023–2024)</small></div>
+      </div>
 
-    <!-- Nome e título -->
-    <div class="perfil-info">
-        <h2>Emerson Roberto Kruger Gonçalves</h2>
-        <p>Bacharelado em Física · Universidade Federal Fluminense</p>
-    </div>
+      <!-- Blocos laterais -->
+      <div class="grid">
+        <div class="section">
+          <h2>Sobre</h2>
+          <p>Estudante de Física na UFF com foco em gravitação, métodos matemáticos e ensino de ciências. Experiência como bolsista do PIBID em atividades pedagógicas e produção de materiais didáticos. Busco oportunidades de pesquisa e colaboração em física teórica e divulgação científica.</p>
+        </div>
 
-    <!-- Logo UFF -->
-    <img src="logo_uff.png" alt="UFF" class="uff-logo">
-</div>
+        <div class="section">
+          <h2>Formação resumida</h2>
+          <ul class="list">
+            <li><b>UFF · Bacharelado em Física</b> — matriz com titulação “BACHAREL” (currículo 25.01.006). <a href="MatrizCurricular2025_1752617039194.pdf">ver matriz</a></li>
+            <li><b>UFLA · Licenciatura em Física</b> — disciplinas cursadas (2021–2025). <a href="Historico_UFLA_Emerson.pdf">ver histórico</a></li>
+          </ul>
+        </div>
 
+        <div class="section">
+          <h2>Atividades & Bolsas</h2>
+          <ul class="list">
+            <li><b>PIBID/CAPES — Física</b> (12/06/2023 → 30/04/2024) — 368 horas de atividades formativas e práticas em ensino. <a href="certificado_pibid.pdf">certificado</a></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Produção</h2>
+          <ul class="list">
+            <li><b>Lei da Gravitação Universal de Newton</b> — artigo introdutório com campo, potencial e Poisson. <a href="Lei-da-Gravitacao-Universal.pdf">PDF</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <footer>
+        © <span id="y"></span> Emerson R. K. Gonçalves — Contato: <a href="mailto:emerson@example.com">emerson@example.com</a> · <a href="https://github.com/emersonkg">GitHub</a>
+      </footer>
+    </section>
+  </main>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
