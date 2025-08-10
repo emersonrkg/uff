@@ -23,9 +23,8 @@
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
     .chip{font-size:12.5px;color:#cfe7ff;background:#0e2130;border:1px solid #163349;padding:6px 10px;border-radius:999px}
     .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px}
-    .btn svg{width:14px;height:14px;fill:#00131f}
-    .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+    .btn{display:inline-block;background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;padding:10px 14px;font-size:14px}
+    .btn.ghost{background:var(--accent);color:#00131f;border:none} /* padroniza cor */
     .media{display:flex;align-items:center;gap:14px}
     .avatar{width:116px;height:116px;border-radius:50%;object-fit:cover;border:3px solid var(--line)}
     .seal{width:86px;height:86px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
@@ -45,7 +44,7 @@
     .email-wrap{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap}
     .seal-foot{width:18px;height:18px;border-radius:50%;object-fit:cover;vertical-align:baseline}
 
-    /* MOBILE: cartão com foto à esquerda e textos à direita */
+    /* MOBILE ajustes */
     .header-mobile{display:none}
     @media (max-width:520px){
       .card{padding:18px;border-radius:16px}
@@ -62,7 +61,8 @@
       .uni-one{font-size:13px;white-space:nowrap}
       .chips{justify-content:center}
       .cta{justify-content:center}
-      .btn,.btn.ghost{width:100%;text-align:center;padding:12px 14px}
+      .btn{width:100%;text-align:center;padding:10px 12px;font-size:13px} /* reduz fonte e altura no mobile */
+      .btn.ghost{width:100%;text-align:center;padding:10px 12px;font-size:13px}
       .kpis{gap:10px}
       .kpi{flex:1 1 150px}
       .grid{grid-template-columns:1fr}
@@ -73,7 +73,7 @@
   <main class="wrap">
     <section class="card">
 
-      <!-- MOBILE (estilo cartão) -->
+      <!-- MOBILE -->
       <div class="header-mobile">
         <div class="bio-card">
           <img class="avatar-sm" src="sua_foto.jpg" alt="Emerson R. K. Gonçalves">
@@ -94,12 +94,8 @@
 
         <div class="cta">
           <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">Artigo: Gravitação</a>
-          <a class="btn" href="http://lattes.cnpq.br/2794155346351456">
-            <!-- Ícone acadêmico -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 7.27L5.74 7 12 4.73 18.26 7 12 9.27zM5 12v7h2v-7H5zm12 0v7h2v-7h-2z"/></svg>
-            Currículo Lattes
-          </a>
-          <a class="btn ghost" href="certificado_pibid.pdf">PIBID (368h)</a>
+          <a class="btn" href="http://lattes.cnpq.br/2794155346351456">Currículo Lattes</a>
+          <a class="btn" href="certificado_pibid.pdf">PIBID (368h)</a>
         </div>
       </div>
 
@@ -117,11 +113,8 @@
 
           <div class="cta">
             <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">Artigo: Gravitação</a>
-            <a class="btn" href="http://lattes.cnpq.br/2794155346351456">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 7.27L5.74 7 12 4.73 18.26 7 12 9.27zM5 12v7h2v-7H5zm12 0v7h2v-7h-2z"/></svg>
-              Currículo Lattes
-            </a>
-            <a class="btn ghost" href="certificado_pibid.pdf">PIBID (368h)</a>
+            <a class="btn" href="http://lattes.cnpq.br/2794155346351456">Currículo Lattes</a>
+            <a class="btn" href="certificado_pibid.pdf">PIBID (368h)</a>
           </div>
         </div>
 
