@@ -2,200 +2,140 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Emerson Roberto Kruger Gonçalves — Perfil</title>
-  <meta name="description" content="Perfil acadêmico de Emerson R. K. Gonçalves — Bacharelando em Física (UFF).">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Início — Emerson Roberto Kruger Gonçalves</title>
+  <meta name="description" content="Página pessoal de Emerson R. K. Gonçalves — Bacharelando em Física (UFF)." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{ --bg:#0b0d10; --card:#12161b; --text:#e8eef5; --muted:#a6b3c3; --accent:#4cc2ff; --line:#1e232b; }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    :root{
+      --bg:#ffffff;        /* fundo claro, igual ao site de referência */
+      --text:#1f2937;      /* cinza-escuro */
+      --muted:#6b7280;     /* cinza médio */
+      --accent:#2563eb;    /* azul links */
+      --line:#e5e7eb;      /* borda suave */
+      --card:#f9fafb;      /* cartões muito claros */
+      --maxw:1100px;       /* largura total do conteúdo */
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:980px;margin:36px auto;padding:0 20px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
 
-    /* topo (desktop) */
-    .header{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
-    h1{margin:0 0 6px 0;font-size:clamp(22px,4vw,34px);line-height:1.15}
-    .subtitle{color:var(--muted)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-    .chip{font-size:12.5px;color:#cfe7ff;background:#0e2130;border:1px solid #163349;padding:6px 10px;border-radius:999px}
+    /* Barra do topo */
+    header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:50}
+    .nav{max-width:var(--maxw);margin:0 auto;display:flex;gap:24px;align-items:center;justify-content:flex-start;padding:18px 16px}
+    .nav a{font-weight:600;color:var(--text)}
+    .nav a.active{color:var(--accent)}
+    .nav .grow{flex:1}
 
-    .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      background:var(--accent);color:#00131f;font-weight:800;border-radius:12px;
-      padding:10px 14px;font-size:14px; line-height:1;
-    }
-    .btn svg{width:16px;height:16px;fill:#00131f}
-    .media{display:flex;align-items:center;gap:14px}
-    .avatar{width:116px;height:116px;border-radius:50%;object-fit:cover;border:3px solid var(--line)}
-    .seal{width:86px;height:86px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
-    .kpis{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
-    .kpi{background:#0e1217;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
-    .kpi b{display:block;font-size:18px}
+    /* Layout com barra lateral esquerda + conteúdo */
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:40px 16px;display:grid;grid-template-columns:280px 1fr;gap:40px}
 
-    /* blocos */
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
-    .section{background:#0f1318;border:1px solid var(--line);border-radius:14px;padding:16px}
-    .section h2{margin:0 0 10px 0;font-size:16px}
-    .list{margin:0;padding-left:18px;color:var(--muted)}
+    /* Sidebar */
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+    .pfp{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#ddd}
+    .name{font-size:22px;font-weight:800;margin:14px 0 6px}
+    .role{font-size:14px;color:var(--muted);margin-bottom:8px}
+    .links{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:10px}
+    .links li{display:flex;align-items:center;gap:10px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
 
-    /* rodapé */
-    footer{color:#aab3bf;font-size:12px;margin:22px 0;text-align:center}
-    .footline{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
-    .email-wrap{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap}
-    .seal-foot{width:18px;height:18px;border-radius:50%;object-fit:cover;vertical-align:baseline}
+    /* Conteúdo principal */
+    main h1{font-size:36px;margin:0 0 6px}
+    .lead{font-size:18px;color:var(--muted);margin:4px 0 26px}
+    section p{margin:0 0 16px}
+    .block{margin:24px 0;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fff}
 
-    /* MOBILE */
-    .header-mobile{display:none}
-    @media (max-width:520px){
-      .card{padding:18px;border-radius:16px}
-      .header{display:none}
-      .header-mobile{display:block}
-      .bio-card{
-        display:flex;align-items:center;gap:12px;
-        padding:12px;margin-bottom:14px;background:#0f1318;border:1px solid var(--line);border-radius:12px;
-      }
-      .avatar-sm{width:104px;height:104px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
-      .bio-txt{display:flex;flex-direction:column;gap:4px}
-      .name-sm{font-weight:800;font-size:20px;line-height:1.1}
-      .line-sm{color:var(--muted);font-size:14px;display:flex;flex-direction:column;gap:4px}
-      .uni-one{font-size:13px;white-space:nowrap}
-      .chips{justify-content:center}
-      .cta{justify-content:center}
-      .btn{width:100%;text-align:center;padding:10px 14px;font-size:14px} /* fonte restaurada */
-      .kpis{gap:10px}
-      .kpi{flex:1 1 150px}
-      .grid{grid-template-columns:1fr}
+    /* Tabela ícones-laterais como no exemplo */
+    .social{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+    .social a{display:inline-flex;align-items:center;gap:10px;color:var(--text)}
+    .social a span{font-weight:600}
+
+    /* Responsivo */
+    @media (max-width: 900px){
+      .wrap{grid-template-columns:1fr}
+      .nav{gap:14px;flex-wrap:wrap}
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card">
+  <!-- Navegação superior -->
+  <header>
+    <nav class="nav" aria-label="principal">
+      <a class="active" href="#inicio">Início</a>
+      <a href="#palestras">Palestras</a>
+      <a href="#publicacoes">Publicações</a>
+      <a href="#blog">Blog</a>
+      <!-- Substituições pedidas: Artigo (PDF), Currículo Lattes, Certificado PIBID (PDF), Portal de Física da UFF -->
+      <span class="grow"></span>
+      <a href="Lei_da_Gravitação_Universal_de_Newton.pdf" target="_blank" rel="noopener">Artigo (PDF)</a>
+      <a href="https://lattes.cnpq.br/SEU_ID" target="_blank" rel="noopener">Currículo Lattes</a>
+      <a href="certificado_pibid.pdf" target="_blank" rel="noopener">Certificado PIBID</a>
+      <a href="https://portal.if.uff.br/" target="_blank" rel="noopener">Portal de Física da UFF</a>
+    </nav>
+  </header>
 
-      <!-- MOBILE (cartão) -->
-      <div class="header-mobile">
-        <div class="bio-card">
-          <img class="avatar-sm" src="sua_foto.jpg" alt="Emerson R. K. Gonçalves">
-          <div class="bio-txt">
-            <div class="name-sm">Emerson Roberto Kruger Gonçalves</div>
-            <div class="line-sm">
-              <div>Bacharelando em Física ·</div>
-              <div class="uni-one">Universidade Federal Fluminense (UFF)</div>
-            </div>
-          </div>
-        </div>
+  <div class="wrap">
+    <!-- Lateral esquerda com foto e links (replicando o estilo) -->
+    <aside>
+      <div class="card">
+        <img class="pfp" src="sua_foto.jpg" alt="Foto de perfil de Emerson" />
+        <div class="name">Emerson Roberto Kruger Gonçalves</div>
+        <div class="role">Physicist, Bacharelando em Física (UFF), Licenciado em Física. Ex-bolsista PIBID.</div>
 
-        <div class="chips">
-          <span class="chip">Interesse: Gravitação & Relatividade</span>
-          <span class="chip">Interesse: Ensino de Física</span>
-          <span class="chip">Métodos Matemáticos</span>
-        </div>
-
-        <div class="cta">
-          <!-- Artigo: ícone de artigo/folha -->
-          <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 2.5L19.5 10H14V4.5zM8 13h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>
-            Artigo: Gravitação
-          </a>
-          <!-- Lattes: capelo -->
-          <a class="btn" href="http://lattes.cnpq.br/2794155346351456" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 8-4v5h2V8l-10-5zm-6 9v5h2v-4.1L6 12z"/></svg>
-            Currículo Lattes
-          </a>
-          <!-- PIBID: medalha -->
-          <a class="btn" href="certificado_pibid.pdf">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm0 18-4 2 1-4-3-3 4-.5L12 10l2 4.5 4 .5-3 3 1 4-4-2z"/></svg>
-            PIBID (368h)
-          </a>
-        </div>
+        <ul class="links">
+          <li><span class="dot" aria-hidden="true"></span><a href="mailto:emrsonrkg@id.uff.br" title="Email">Email</a></li>
+          <li><span class="dot" aria-hidden="true"></span><a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener">ORCID</a></li>
+          <li><span class="dot" aria-hidden="true"></span><a href="https://github.com/emersonrkg" target="_blank" rel="noopener">GitHub</a></li>
+          <li><span class="dot" aria-hidden="true"></span><a href="https://instagram.com/emersonkruger7" target="_blank" rel="noopener">Instagram</a></li>
+          <li><span class="dot" aria-hidden="true"></span><a href="#" target="_blank" rel="noopener">Inspire</a></li>
+          <li><span class="dot" aria-hidden="true"></span><a href="https://youtube.com/@SEU_CANAL" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
       </div>
+    </aside>
 
-      <!-- DESKTOP -->
-      <div class="header">
-        <div>
-          <h1>Emerson Roberto Kruger Gonçalves</h1>
-          <div class="subtitle">Bacharelando em Física · Universidade Federal Fluminense (UFF)</div>
-
-          <div class="chips">
-            <span class="chip">Interesse: Gravitação & Relatividade</span>
-            <span class="chip">Interesse: Ensino de Física</span>
-            <span class="chip">Métodos Matemáticos</span>
-          </div>
-
-          <div class="cta">
-            <a class="btn" href="Lei_da_Gravitação_Universal_de_Newton.pdf">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 2.5L19.5 10H14V4.5zM8 13h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>
-              Artigo: Gravitação
-            </a>
-            <a class="btn" href="http://lattes.cnpq.br/2794155346351456" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 8-4v5h2V8l-10-5zm-6 9v5h2v-4.1L6 12z"/></svg>
-              Currículo Lattes
-            </a>
-            <a class="btn" href="certificado_pibid.pdf">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm0 18-4 2 1-4-3-3 4-.5L12 10l2 4.5 4 .5-3 3 1 4-4-2z"/></svg>
-              PIBID (368h)
-            </a>
-          </div>
-        </div>
-
-        <div class="media">
-          <img class="avatar" src="sua_foto.jpg" alt="Emerson R. K. Gonçalves">
-          <img class="seal" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
-        </div>
-      </div>
-
-      <div class="kpis">
-        <div class="kpi"><b>2025</b><small>Ingresso UFF (currículo bacharel)</small></div>
-        <div class="kpi"><b>368h</b><small>PIBID/CAPES — Física (2023–2024)</small></div>
-      </div>
-
-      <div class="grid">
-        <div class="section">
-          <h2>Sobre</h2>
-          <p>Estudante de Física na UFF com foco em gravitação, métodos matemáticos e ensino de ciências. Experiência como bolsista do PIBID em atividades pedagógicas e produção de materiais didáticos. Busco oportunidades de pesquisa e colaboração em física teórica e divulgação científica.</p>
-        </div>
-
-        <div class="section">
-          <h2>Formação resumida</h2>
-          <ul class="list">
-            <li><b>UFF · Bacharelado em Física</b> — matriz com titulação “BACHAREL” (currículo 25.01.006). <a href="MatrizCurricular2025_1752617039194.pdf">ver matriz</a></li>
-            <li><b>UFLA · Licenciatura em Física</b> — disciplinas cursadas (2022–2025).</li>
+    <!-- Conteúdo principal -->
+    <main>
+      <section id="inicio">
+        <h1>Início</h1>
+        <p class="lead">Bem-vindo à minha página!</p>
+        <p>Meu nome é <strong>Emerson</strong>. Sou licenciado em Física e atualmente curso o <strong>bacharelado em Física na Universidade Federal Fluminense (UFF)</strong>. Fui bolsista do <strong>PIBID</strong>, experiência que fortaleceu meu interesse por ensino, pesquisa e divulgação científica.</p>
+        <p>Minha curiosidade acadêmica gira em torno de duas frentes principais: <strong>eletricidade</strong>, com ênfase nas <em>Equações de Maxwell</em> e em circuitos, e <strong>gravitação</strong>, do regime clássico à cosmologia. Gosto de estudar como técnicas matemáticas e métodos experimentais se conectam para responder perguntas fundamentais e também para aplicações interdisciplinares.</p>
+        <p>Este site reúne notas, materiais de estudo, registros de atividades e links úteis. Sinta-se à vontade para explorar as seções e entrar em contato.</p>
+        <div class="block">
+          <strong>Atalhos rápidos:</strong>
+          <ul>
+            <li><a href="Lei_da_Gravitação_Universal_de_Newton.pdf" target="_blank" rel="noopener">Baixar meu artigo em PDF</a></li>
+            <li><a href="https://lattes.cnpq.br/SEU_ID" target="_blank" rel="noopener">Acessar meu Currículo Lattes</a></li>
+            <li><a href="certificado_pibid.pdf" target="_blank" rel="noopener">Ver certificado do PIBID</a></li>
+            <li><a href="https://portal.if.uff.br/" target="_blank" rel="noopener">Portal de Física da UFF</a></li>
           </ul>
         </div>
+      </section>
 
-        <div class="section">
-          <h2>Atividades & Bolsas</h2>
-          <ul class="list">
-            <li><b>PIBID/CAPES — Física</b> (12/06/2023 → 30/04/2024) — 368 horas de atividades formativas e práticas em ensino. <a href="certificado_pibid.pdf">certificado</a></li>
-          </ul>
-        </div>
+      <section id="palestras">
+        <h2>Palestras</h2>
+        <p>Em breve adicionarei materiais e notas de apresentações.</p>
+      </section>
 
-        <div class="section">
-          <h2>Produção</h2>
-          <ul class="list">
-            <li><b>Lei da Gravitação Universal de Newton</b> — artigo introdutório com campo, potencial e Poisson. <a href="Lei_da_Gravitação_Universal_de_Newton.pdf">PDF</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      <section id="publicacoes">
+        <h2>Publicações</h2>
+        <p>Lista de manuscritos, resumos expandidos e relatórios será organizada aqui.</p>
+      </section>
 
-    <footer>
-      <span class="footline">
-        © <span id="y"></span> Emerson R. K. Gonçalves — Contato:
-        <span class="email-wrap">
-          <a href="mailto:emersonrkg@id.uff.br">emersonrkg@id.uff.br</a>
-          <img class="seal-foot" src="logouff_vertical_fundo_azul-1.png" alt="UFF">
-        </span>
-        · <a href="https://github.com/emersonkg">GitHub</a>
-      </span>
-    </footer>
-  </main>
+      <section id="blog">
+        <h2>Blog</h2>
+        <p>Textos curtos sobre estudos, resoluções detalhadas e dicas para provas.</p>
+      </section>
 
+    </main>
+  </div>
+
+  <footer style="border-top:1px solid var(--line);margin-top:30px">
+    <div style="max-width:var(--maxw);margin:0 auto;padding:24px 16px;color:var(--muted);font-size:14px">
+      © <span id="y"></span> Emerson R. K. Gonçalves — Construído com HTML/CSS estático (GitHub Pages)
+    </div>
+  </footer>
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
